@@ -1,0 +1,62 @@
+<body>
+    <h1>"Welcome to 2nd years!"</h1>
+    <p id=""test"></p>
+</body>
+
+<scrip>
+    console.log("testing");
+
+    //Function 1:function + name +aggrement --nor anonymous
+    function greeting(){
+        console.log("Hello 2nd years");
+    }
+    greeting();
+
+    //Function 2:function declare as a variable & anonymous function
+    var welcoming = function(){
+        retrun "Welcome to Cross Platforn";
+    }
+   document.getElementById("test").innerHTML=welcoming();
+
+    //Function 3:Arrow funciton
+    var congratulate = () => {
+        console.log("Congratulations for winning the World Cup!");
+    }
+    congratulate();
+
+    //Function 4:Arrow funciton with parameters
+    var congratulate= (country) => {
+        console.log("Congratulations"+ country + "for winning the World Cup");
+    }
+    congratulate("Aegentina");
+
+    //Function 5:self invoke
+    (()=> {
+        console.log("Time for a break??");
+    }
+    )()
+
+    //function 6:take another funtion as a parameters
+    function printing(fcn){
+        console.log(fcn());
+    }
+    printing(greeting);
+    printing(welcoming);
+
+    //Scheduling function execution
+    Function.prototype.schedule = function(msec){
+        this.timeout = setTimeoue(this, msec);
+
+    }
+    Function.prototype.cancelSchedule = function(){
+        clearTimeout(this.timeout);
+    }
+    function doSomething(){
+        console.log("doing something");
+    }
+    doSomething.schdule(800);
+    greeting();
+
+
+
+</scrip>
